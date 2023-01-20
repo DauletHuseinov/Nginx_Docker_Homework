@@ -11,7 +11,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile.prod
-    command: gunicorn --workers=4 office.wsgi.application --bind 0.0.0.0:8000
+    command: gunicorn --workers=4 office.wsgi:application --bind 0.0.0.0:8000
     expose:
       - '8000'
     env_file:
